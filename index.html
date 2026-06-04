@@ -1,154 +1,2552 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prova Emlak - Gayrimenkul</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prova Emlak | Hayalinizdeki Eve Bir Adım</title>
+<meta name="description" content="Prova Emlak - Türkiye'nin en güvenilir lüks gayrimenkul danışmanlığı. Satılık ve kiralık villa, rezidans, işyeri seçenekleri." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#0d1f0d;--card:#152015;--accent:#4ade80;--gold:#fbbf24;--text:#e2e8f0;--muted:#94a3b8;}
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);}
-nav{position:fixed;top:0;width:100%;background:rgba(13,31,13,0.97);backdrop-filter:blur(10px);padding:1.2rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid rgba(74,222,128,0.2);}
-.logo{font-size:1.4rem;font-weight:800;color:var(--accent);}
-.nav-links a{color:var(--text);text-decoration:none;margin-left:2rem;font-size:0.9rem;}
-.nav-links a:hover{color:var(--accent);}
-.btn-green{background:var(--accent);color:#0d1f0d;padding:0.7rem 1.8rem;border:none;border-radius:0.4rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
-.btn-green:hover{background:#22c55e;}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:8rem 5% 4rem;}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80') center/cover;opacity:0.12;}
-.hero-content{position:relative;max-width:650px;}
-.hero-badge{display:inline-block;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.4);color:var(--accent);padding:0.4rem 1rem;border-radius:2rem;font-size:0.85rem;margin-bottom:1.5rem;}
-.hero h1{font-size:3.2rem;font-weight:800;line-height:1.2;margin-bottom:1.5rem;}
-.hero h1 span{color:var(--accent);}
-.hero p{color:var(--muted);font-size:1.05rem;line-height:1.8;margin-bottom:2rem;}
-.search-bar{background:rgba(255,255,255,0.05);border:1px solid rgba(74,222,128,0.3);border-radius:0.8rem;padding:1.2rem 1.5rem;display:flex;gap:1rem;align-items:center;max-width:600px;}
-.search-bar select,.search-bar input{background:transparent;border:none;color:var(--text);font-size:0.95rem;outline:none;flex:1;}
-.stats{padding:3rem 5%;background:var(--card);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
-.stat-num{font-size:2.5rem;font-weight:800;color:var(--accent);}
-.stat-label{color:var(--muted);font-size:0.85rem;margin-top:0.4rem;}
-.section{padding:5rem 5%;}
-.section-tag{color:var(--accent);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:0.8rem;}
-.section-title{font-size:2.2rem;font-weight:800;margin-bottom:2rem;}
-.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-.listing-card{background:var(--card);border-radius:1rem;overflow:hidden;border:1px solid rgba(74,222,128,0.1);transition:all 0.3s;}
-.listing-card:hover{transform:translateY(-5px);border-color:rgba(74,222,128,0.4);}
-.listing-img{width:100%;height:220px;object-fit:cover;position:relative;}
-.listing-img img{width:100%;height:100%;object-fit:cover;}
-.listing-tag{position:absolute;top:1rem;left:1rem;background:var(--accent);color:#0d1f0d;padding:0.3rem 0.8rem;border-radius:0.4rem;font-size:0.75rem;font-weight:700;}
-.listing-body{padding:1.5rem;}
-.listing-price{font-size:1.4rem;font-weight:800;color:var(--accent);margin-bottom:0.5rem;}
-.listing-title{font-weight:700;margin-bottom:0.5rem;}
-.listing-loc{color:var(--muted);font-size:0.85rem;margin-bottom:1rem;}
-.listing-details{display:flex;gap:1rem;color:var(--muted);font-size:0.8rem;}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-.about-img{width:100%;height:480px;object-fit:cover;border-radius:1rem;border:1px solid rgba(74,222,128,0.2);}
-.feature-list{list-style:none;margin-top:1.5rem;}
-.feature-list li{padding:0.7rem 0;color:var(--muted);border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.8rem;}
-.feature-list li::before{content:'';width:8px;height:8px;background:var(--accent);border-radius:50%;flex-shrink:0;}
-footer{background:#070f07;padding:3rem 5%;text-align:center;color:var(--muted);}
-.footer-logo{font-size:1.6rem;font-weight:800;color:var(--accent);margin-bottom:0.8rem;}
-@media(max-width:768px){.hero h1{font-size:2rem;}.stats,.listings-grid,.about-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+/* =========================================================
+   PROVA EMLAK - TEMEL DEĞIŞKENLER
+   ========================================================= */
+:root{
+  --bg-primary:#ffffff;
+  --bg-secondary:#f8f9fa;
+  --bg-tertiary:#eef1f5;
+  --color-navy:#1d3557;
+  --color-navy-dark:#14253f;
+  --color-navy-light:#2a4a73;
+  --color-gold:#c9a45a;
+  --color-gold-light:#d9b775;
+  --color-gold-dark:#a8863f;
+  --color-text:#1a1a1a;
+  --color-text-muted:#5a6472;
+  --color-text-soft:#8a93a0;
+  --color-border:#e3e6ec;
+  --shadow-sm:0 2px 8px rgba(29,53,87,0.06);
+  --shadow-md:0 8px 24px rgba(29,53,87,0.10);
+  --shadow-lg:0 18px 50px rgba(29,53,87,0.16);
+  --shadow-xl:0 30px 80px rgba(29,53,87,0.22);
+  --radius-sm:6px;
+  --radius-md:12px;
+  --radius-lg:20px;
+  --transition:all .35s cubic-bezier(.2,.7,.2,1);
+  --font-serif:'Playfair Display', Georgia, serif;
+  --font-sans:'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --container:1240px;
+}
+
+/* =========================================================
+   RESET & GENEL
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-sans);
+  font-weight:400;
+  color:var(--color-text);
+  background:var(--bg-primary);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;transition:var(--transition)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;transition:var(--transition)}
+ul,ol{list-style:none}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-serif);font-weight:700;line-height:1.2;color:var(--color-navy);letter-spacing:-.01em}
+.container{max-width:var(--container);margin:0 auto;padding:0 28px}
+.section{padding:110px 0;position:relative}
+.section-sm{padding:80px 0}
+.section-title{text-align:center;margin-bottom:64px}
+.section-title .eyebrow{
+  display:inline-block;
+  font-family:var(--font-sans);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--color-gold);
+  margin-bottom:18px;
+  position:relative;
+  padding:0 32px;
+}
+.section-title .eyebrow::before,
+.section-title .eyebrow::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:22px;
+  height:1px;
+  background:var(--color-gold);
+}
+.section-title .eyebrow::before{left:0}
+.section-title .eyebrow::after{right:0}
+.section-title h2{
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+.section-title p{
+  font-size:17px;
+  color:var(--color-text-muted);
+  max-width:640px;
+  margin:0 auto;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 32px;
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  transition:var(--transition);
+  position:relative;
+  overflow:hidden;
+}
+.btn-primary{background:var(--color-navy);color:#fff}
+.btn-primary:hover{background:var(--color-navy-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-gold{background:var(--color-gold);color:#fff}
+.btn-gold:hover{background:var(--color-gold-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn-outline:hover{background:#fff;color:var(--color-navy);border-color:#fff}
+.btn .arrow{width:14px;height:14px;transition:transform .3s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* =========================================================
+   NAVIGASYON
+   ========================================================= */
+.navbar{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(255,255,255,0);
+  padding:24px 0;
+  transition:var(--transition);
+}
+.navbar.scrolled{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 4px 30px rgba(29,53,87,.08);
+  padding:14px 0;
+}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between}
+.brand{
+  font-family:var(--font-serif);
+  font-size:26px;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:.02em;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;height:42px;
+  background:var(--color-gold);
+  color:#fff;
+  border-radius:8px;
+  font-family:var(--font-serif);
+  font-size:20px;
+  font-weight:800;
+  box-shadow:0 4px 12px rgba(201,164,90,.4);
+}
+.navbar.scrolled .brand{color:var(--color-navy)}
+.navbar.scrolled .brand-mark{background:var(--color-navy);color:var(--color-gold)}
+.brand-text small{
+  display:block;
+  font-family:var(--font-sans);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.32em;
+  color:var(--color-gold);
+  text-transform:uppercase;
+  margin-top:2px;
+}
+.navbar.scrolled .brand-text small{color:var(--color-gold)}
+.nav-links{display:flex;align-items:center;gap:38px}
+.nav-links a{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.92);
+  position:relative;
+  padding:6px 0;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:2px;
+  background:var(--color-gold);
+  transition:width .3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after{width:100%}
+.navbar.scrolled .nav-links a{color:var(--color-text)}
+.nav-cta{
+  background:var(--color-gold);
+  color:#fff !important;
+  padding:11px 22px !important;
+  border-radius:var(--radius-sm);
+  font-weight:700 !important;
+}
+.nav-cta::after{display:none !important}
+.nav-cta:hover{background:var(--color-gold-dark)}
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  width:30px;height:30px;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:24px;height:2px;
+  background:#fff;
+  transition:var(--transition);
+}
+.navbar.scrolled .menu-toggle span{background:var(--color-navy)}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(20,37,63,.55) 0%, rgba(20,37,63,.65) 60%, rgba(20,37,63,.78) 100%),
+             url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=85') center/cover no-repeat fixed;
+  overflow:hidden;
+  padding:140px 0 100px;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at center, transparent 0%, rgba(20,37,63,.4) 100%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;width:100%;text-align:center;color:#fff}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 22px;
+  background:rgba(201,164,90,.18);
+  border:1px solid rgba(201,164,90,.45);
+  border-radius:100px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--color-gold-light);
+  margin-bottom:32px;
+  animation:fadeUp 1s ease .2s both;
+}
+.hero-badge .dot{
+  width:6px;height:6px;
+  background:var(--color-gold);
+  border-radius:50%;
+  animation:pulse 2s infinite;
+}
+.hero h1{
+  font-size:84px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.05;
+  margin-bottom:24px;
+  letter-spacing:-.02em;
+  animation:fadeUp 1s ease .4s both;
+}
+.hero h1 .accent{
+  color:var(--color-gold);
+  font-style:italic;
+  position:relative;
+  display:inline-block;
+}
+.hero h1 .accent::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-8px;
+  height:2px;
+  background:var(--color-gold);
+}
+.hero p.lead{
+  font-size:20px;
+  font-weight:300;
+  color:rgba(255,255,255,.85);
+  max-width:680px;
+  margin:0 auto 56px;
+  line-height:1.6;
+  animation:fadeUp 1s ease .6s both;
+}
+
+/* Hero Arama Formu */
+.search-card{
+  background:#fff;
+  border-radius:var(--radius-md);
+  padding:14px;
+  max-width:1100px;
+  margin:0 auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:fadeUp 1s ease .8s both;
+}
+.search-tabs{
+  display:flex;
+  gap:0;
+  border-bottom:1px solid var(--color-border);
+  margin-bottom:14px;
+  padding:0 6px;
+}
+.search-tab{
+  padding:14px 26px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  cursor:pointer;
+  position:relative;
+  transition:var(--transition);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.search-tab.active{color:var(--color-navy)}
+.search-tab.active::after{
+  content:"";
+  position:absolute;
+  left:14px;right:14px;bottom:-1px;
+  height:2px;
+  background:var(--color-gold);
+}
+.search-tab svg{width:16px;height:16px}
+.search-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.2fr auto;
+  gap:10px;
+  padding:10px 6px;
+}
+.search-field{
+  position:relative;
+  background:var(--bg-secondary);
+  border-radius:var(--radius-sm);
+  padding:8px 18px;
+  text-align:left;
+  border:1px solid transparent;
+  transition:var(--transition);
+  cursor:pointer;
+}
+.search-field:hover,
+.search-field:focus-within{
+  background:#fff;
+  border-color:var(--color-gold);
+  box-shadow:0 0 0 3px rgba(201,164,90,.1);
+}
+.search-field label{
+  display:block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--color-text-soft);
+  margin-bottom:4px;
+}
+.search-field select,
+.search-field input{
+  width:100%;
+  border:none;
+  background:transparent;
+  font-family:var(--font-sans);
+  font-size:15px;
+  font-weight:700;
+  color:var(--color-text);
+  outline:none;
+  padding:2px 0;
+  cursor:pointer;
+}
+.search-field select{appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3e%3cpath fill='%235a6472' d='M6 8L0 0h12z'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 0 center;padding-right:18px}
+.search-field input::placeholder{color:var(--color-text-soft);font-weight:400}
+.btn-search{
+  background:var(--color-navy);
+  color:#fff;
+  padding:0 32px;
+  border-radius:var(--radius-sm);
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  align-self:stretch;
+  cursor:pointer;
+}
+.btn-search:hover{background:var(--color-navy-dark)}
+.btn-search svg{width:18px;height:18px}
+
+.scroll-cue{
+  position:absolute;
+  bottom:30px;left:50%;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.7);
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  text-align:center;
+  animation:bounce 2s infinite 2s;
+}
+.scroll-cue .mouse{
+  display:block;
+  width:24px;height:38px;
+  border:2px solid rgba(255,255,255,.5);
+  border-radius:14px;
+  margin:0 auto 10px;
+  position:relative;
+}
+.scroll-cue .mouse::before{
+  content:"";
+  position:absolute;
+  top:8px;left:50%;
+  transform:translateX(-50%);
+  width:3px;height:8px;
+  background:var(--color-gold);
+  border-radius:2px;
+  animation:scrollDot 2s infinite;
+}
+
+/* =========================================================
+   GÜVEN BANTI
+   ========================================================= */
+.trust-band{
+  background:var(--color-navy);
+  padding:60px 0;
+  position:relative;
+  overflow:hidden;
+}
+.trust-band::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(201,164,90,.08) 0%, transparent 50%);
+  pointer-events:none;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+  z-index:1;
+}
+.trust-item{
+  text-align:center;
+  padding:10px 24px;
+  position:relative;
+  color:#fff;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.trust-item:last-child{border-right:none}
+.trust-icon{
+  width:54px;height:54px;
+  margin:0 auto 18px;
+  background:rgba(201,164,90,.15);
+  border:1px solid rgba(201,164,90,.35);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--color-gold);
+  transition:var(--transition);
+}
+.trust-item:hover .trust-icon{
+  background:var(--color-gold);
+  color:#fff;
+  transform:rotate(-6deg) scale(1.05);
+}
+.trust-icon svg{width:26px;height:26px}
+.trust-num{
+  font-family:var(--font-serif);
+  font-size:48px;
+  font-weight:800;
+  color:var(--color-gold);
+  line-height:1;
+  margin-bottom:8px;
+  letter-spacing:-.02em;
+}
+.trust-num .plus{font-size:32px;vertical-align:top;margin-left:2px}
+.trust-label{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+}
+
+/* =========================================================
+   ÖNE ÇIKAN İLANLAR
+   ========================================================= */
+.featured{background:var(--bg-primary)}
+.listings-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.listing-card{
+  background:#fff;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+  position:relative;
+  border:1px solid var(--color-border);
+}
+.listing-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.listing-media{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--bg-tertiary);
+}
+.listing-media img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.listing-card:hover .listing-media img{transform:scale(1.08)}
+.listing-badge{
+  position:absolute;
+  top:18px;left:18px;
+  background:var(--color-navy);
+  color:#fff;
+  padding:7px 16px;
+  border-radius:100px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  z-index:2;
+}
+.listing-badge.sale{background:var(--color-gold)}
+.listing-badge.rent{background:var(--color-navy)}
+.listing-fav{
+  position:absolute;
+  top:18px;right:18px;
+  width:40px;height:40px;
+  background:rgba(255,255,255,.95);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:2;
+  color:var(--color-text-muted);
+  transition:var(--transition);
+}
+.listing-fav:hover{background:#fff;color:#e74c3c;transform:scale(1.1)}
+.listing-fav svg{width:18px;height:18px;stroke-width:2}
+.listing-tag{
+  position:absolute;
+  bottom:18px;left:18px;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(8px);
+  color:#fff;
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  z-index:2;
+}
+.listing-body{padding:26px 24px}
+.listing-price{
+  font-family:var(--font-serif);
+  font-size:30px;
+  font-weight:800;
+  color:var(--color-navy);
+  margin-bottom:8px;
+  line-height:1;
+}
+.listing-price small{
+  font-size:14px;
+  font-weight:400;
+  color:var(--color-text-muted);
+  font-family:var(--font-sans);
+  margin-left:4px;
+}
+.listing-title{
+  font-size:20px;
+  font-weight:700;
+  color:var(--color-navy);
+  margin-bottom:8px;
+  line-height:1.3;
+}
+.listing-location{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  color:var(--color-text-muted);
+  margin-bottom:18px;
+}
+.listing-location svg{width:14px;height:14px;color:var(--color-gold)}
+.listing-specs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid var(--color-border);
+  padding-top:18px;
+  margin-bottom:18px;
+}
+.spec{
+  text-align:center;
+  font-size:13px;
+  color:var(--color-text-muted);
+  border-right:1px solid var(--color-border);
+}
+.spec:last-child{border-right:none}
+.spec strong{
+  display:block;
+  font-family:var(--font-serif);
+  font-size:18px;
+  font-weight:700;
+  color:var(--color-navy);
+  margin-bottom:2px;
+}
+.spec span{font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.listing-cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:18px;
+  border-top:1px solid var(--color-border);
+}
+.listing-cta .link{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--color-navy);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:var(--transition);
+}
+.listing-cta .link:hover{color:var(--color-gold);gap:14px}
+.listing-cta .link svg{width:14px;height:14px}
+.listing-cta .agent{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.agent-avatar{
+  width:32px;height:32px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:13px;
+}
+.view-all{text-align:center;margin-top:56px}
+
+/* =========================================================
+   HİZMETLER
+   ========================================================= */
+.services{background:var(--bg-secondary)}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+.service-card{
+  background:#fff;
+  padding:46px 32px;
+  border-radius:var(--radius-md);
+  text-align:center;
+  transition:var(--transition);
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--color-border);
+}
+.service-card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .4s ease;
+}
+.service-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:80px;height:80px;
+  margin:0 auto 24px;
+  background:linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--color-gold);
+  position:relative;
+  transition:var(--transition);
+  transform:rotate(-3deg);
+}
+.service-card:hover .service-icon{transform:rotate(0deg) scale(1.05);background:linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);color:#fff}
+.service-icon svg{width:38px;height:38px}
+.service-card h3{
+  font-size:22px;
+  margin-bottom:14px;
+}
+.service-card p{
+  color:var(--color-text-muted);
+  font-size:15px;
+  margin-bottom:22px;
+  min-height:75px;
+}
+.service-card .more{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--color-gold);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:var(--transition);
+}
+.service-card .more:hover{gap:12px}
+
+/* =========================================================
+   NEDEN BİZ
+   ========================================================= */
+.why-us{background:#fff;overflow:hidden}
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.why-image{
+  position:relative;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.why-image img{width:100%;height:560px;object-fit:cover;display:block}
+.why-image .badge{
+  position:absolute;
+  bottom:30px;right:30px;
+  background:var(--color-gold);
+  color:#fff;
+  padding:24px 30px;
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md);
+  text-align:center;
+}
+.why-image .badge .num{
+  font-family:var(--font-serif);
+  font-size:48px;
+  font-weight:800;
+  line-height:1;
+  display:block;
+}
+.why-image .badge .lbl{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-top:4px;
+  display:block;
+}
+.why-image .frame{
+  position:absolute;
+  inset:-20px;
+  border:2px solid var(--color-gold);
+  border-radius:var(--radius-md);
+  z-index:-1;
+  transform:translate(20px, 20px);
+  transition:transform .6s ease;
+}
+.why-image:hover .frame{transform:translate(14px, 14px)}
+.why-text h2{
+  font-size:44px;
+  font-weight:700;
+  margin-bottom:20px;
+  line-height:1.15;
+}
+.why-text .lead{
+  font-size:17px;
+  color:var(--color-text-muted);
+  margin-bottom:32px;
+  line-height:1.7;
+}
+.feature-list{display:flex;flex-direction:column;gap:18px;margin-bottom:36px}
+.feature-item{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  padding:18px 22px;
+  background:var(--bg-secondary);
+  border-radius:var(--radius-md);
+  border-left:3px solid var(--color-gold);
+  transition:var(--transition);
+}
+.feature-item:hover{
+  background:#fff;
+  box-shadow:var(--shadow-sm);
+  transform:translateX(6px);
+}
+.feature-item .icon{
+  width:42px;height:42px;
+  flex-shrink:0;
+  background:var(--color-navy);
+  color:var(--color-gold);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.feature-item .icon svg{width:20px;height:20px}
+.feature-item h4{
+  font-size:17px;
+  margin-bottom:4px;
+  color:var(--color-navy);
+}
+.feature-item p{font-size:14px;color:var(--color-text-muted);margin:0;line-height:1.55}
+
+/* =========================================================
+   ŞEHİRLER
+   ========================================================= */
+.cities{background:var(--bg-secondary);position:relative}
+.cities-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+.city-card{
+  position:relative;
+  height:280px;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+}
+.city-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.city-card img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.city-card:hover img{transform:scale(1.1)}
+.city-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent 30%, rgba(20,37,63,.85) 100%);
+  z-index:1;
+}
+.city-info{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:24px;
+  color:#fff;
+  z-index:2;
+}
+.city-info h3{
+  color:#fff;
+  font-size:24px;
+  margin-bottom:4px;
+  letter-spacing:.01em;
+}
+.city-info .count{
+  font-size:13px;
+  font-weight:700;
+  color:var(--color-gold);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.city-info .count::before{
+  content:"";
+  display:inline-block;
+  width:20px;height:1px;
+  background:var(--color-gold);
+}
+.city-card .arrow-circle{
+  position:absolute;
+  top:20px;right:20px;
+  width:42px;height:42px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  z-index:2;
+  transition:var(--transition);
+}
+.city-card:hover .arrow-circle{background:var(--color-gold);border-color:var(--color-gold);transform:rotate(-45deg)}
+.city-card .arrow-circle svg{width:16px;height:16px}
+
+/* =========================================================
+   BLOG
+   ========================================================= */
+.blog{background:#fff}
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.blog-card{
+  background:#fff;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+  border:1px solid var(--color-border);
+}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.blog-media{
+  aspect-ratio:16/10;
+  overflow:hidden;
+  position:relative;
+}
+.blog-media img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .8s ease;
+}
+.blog-card:hover .blog-media img{transform:scale(1.08)}
+.blog-category{
+  position:absolute;
+  top:18px;left:18px;
+  background:#fff;
+  color:var(--color-navy);
+  padding:6px 14px;
+  border-radius:100px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.blog-body{padding:28px 26px 30px}
+.blog-meta{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:12px;
+  color:var(--color-text-soft);
+  margin-bottom:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.blog-meta span{display:flex;align-items:center;gap:6px}
+.blog-meta svg{width:13px;height:13px}
+.blog-card h3{
+  font-size:22px;
+  line-height:1.3;
+  margin-bottom:12px;
+  transition:var(--transition);
+}
+.blog-card:hover h3{color:var(--color-gold)}
+.blog-card p{
+  color:var(--color-text-muted);
+  font-size:15px;
+  margin-bottom:18px;
+  line-height:1.6;
+}
+.blog-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--color-navy);
+  padding-top:16px;
+  border-top:1px solid var(--color-border);
+  width:100%;
+  transition:var(--transition);
+}
+.blog-link:hover{color:var(--color-gold);gap:14px}
+.blog-link svg{width:14px;height:14px}
+
+/* =========================================================
+   YORUMLAR
+   ========================================================= */
+.testimonials{
+  background:linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.testimonials::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=70') center/cover;
+  opacity:.08;
+  mix-blend-mode:overlay;
+}
+.testimonials .section-title h2{color:#fff}
+.testimonials .section-title p{color:rgba(255,255,255,.75)}
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  position:relative;
+  z-index:1;
+}
+.testi-card{
+  background:#fff;
+  color:var(--color-text);
+  padding:38px 32px;
+  border-radius:var(--radius-md);
+  position:relative;
+  transition:var(--transition);
+}
+.testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+.testi-quote{
+  position:absolute;
+  top:-24px;left:32px;
+  width:52px;height:52px;
+  background:var(--color-gold);
+  color:#fff;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--font-serif);
+  font-size:36px;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(201,164,90,.4);
+}
+.stars{
+  display:flex;
+  gap:4px;
+  margin:20px 0 18px;
+  color:var(--color-gold);
+}
+.stars svg{width:18px;height:18px;fill:currentColor}
+.testi-text{
+  font-size:16px;
+  color:var(--color-text);
+  line-height:1.7;
+  margin-bottom:28px;
+  font-style:italic;
+}
+.testi-author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-top:22px;
+  border-top:1px solid var(--color-border);
+}
+.testi-author img{
+  width:54px;height:54px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--color-gold);
+}
+.testi-author .info h4{
+  font-size:16px;
+  color:var(--color-navy);
+  margin-bottom:2px;
+  font-family:var(--font-sans);
+  font-weight:700;
+}
+.testi-author .info span{
+  font-size:12px;
+  color:var(--color-text-muted);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+/* =========================================================
+   İLETİŞİM CTA
+   ========================================================= */
+.contact{background:var(--bg-secondary)}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:48px;
+  align-items:stretch;
+}
+.contact-form{
+  background:#fff;
+  padding:48px;
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md);
+}
+.contact-form h3{
+  font-size:30px;
+  margin-bottom:8px;
+}
+.contact-form .sub{
+  color:var(--color-text-muted);
+  font-size:15px;
+  margin-bottom:32px;
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.form-row{margin-bottom:16px}
+.form-row.full{grid-column:1 / -1}
+.form-row label{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  margin-bottom:8px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-sm);
+  font-family:var(--font-sans);
+  font-size:15px;
+  color:var(--color-text);
+  background:var(--bg-primary);
+  transition:var(--transition);
+  outline:none;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  border-color:var(--color-gold);
+  box-shadow:0 0 0 3px rgba(201,164,90,.12);
+  background:#fff;
+}
+.form-row textarea{resize:vertical;min-height:120px}
+.btn-submit{
+  width:100%;
+  background:var(--color-navy);
+  color:#fff;
+  padding:18px;
+  border-radius:var(--radius-sm);
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:8px;
+}
+.btn-submit:hover{background:var(--color-gold)}
+.btn-submit svg{width:18px;height:18px}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.map-placeholder{
+  height:280px;
+  border-radius:var(--radius-md);
+  background:linear-gradient(135deg, #d9e2ec 0%, #c5d3e3 100%);
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.map-placeholder::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(255,255,255,.4) 25%, rgba(255,255,255,.4) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.4) 75%, rgba(255,255,255,.4) 76%, transparent 77%),
+    linear-gradient(90deg, transparent 24%, rgba(255,255,255,.4) 25%, rgba(255,255,255,.4) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.4) 75%, rgba(255,255,255,.4) 76%, transparent 77%);
+  background-size:60px 60px;
+  opacity:.5;
+}
+.map-pin{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-100%);
+  z-index:2;
+  text-align:center;
+}
+.map-pin .dot{
+  width:60px;height:60px;
+  background:var(--color-gold);
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  margin:0 auto 10px;
+  box-shadow:0 10px 30px rgba(201,164,90,.5);
+  position:relative;
+  animation:bounce 2s infinite;
+}
+.map-pin .dot::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) rotate(45deg);
+  width:22px;height:22px;
+  background:#fff;
+  border-radius:50%;
+}
+.map-pin .lbl{
+  display:inline-block;
+  background:#fff;
+  color:var(--color-navy);
+  padding:8px 18px;
+  border-radius:100px;
+  font-weight:700;
+  font-size:13px;
+  box-shadow:var(--shadow-md);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.info-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.info-card{
+  background:#fff;
+  padding:24px;
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);
+  transition:var(--transition);
+  border:1px solid var(--color-border);
+}
+.info-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--color-gold)}
+.info-card .ic{
+  width:46px;height:46px;
+  background:linear-gradient(135deg, var(--color-navy), var(--color-navy-light));
+  color:var(--color-gold);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:16px;
+}
+.info-card .ic svg{width:20px;height:20px}
+.info-card h4{
+  font-size:14px;
+  margin-bottom:6px;
+  letter-spacing:.04em;
+}
+.info-card p{
+  font-size:14px;
+  color:var(--color-text-muted);
+  margin:0;
+  line-height:1.5;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{
+  background:var(--color-navy-dark);
+  color:rgba(255,255,255,.7);
+  padding:90px 0 0;
+  position:relative;
+}
+.footer::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+  gap:48px;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer .brand{color:#fff;margin-bottom:20px}
+.footer .brand small{color:var(--color-gold)}
+.footer-about p{
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:24px;
+  color:rgba(255,255,255,.6);
+}
+.footer h4{
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:24px;
+  position:relative;
+  padding-bottom:14px;
+}
+.footer h4::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;
+  width:30px;height:2px;
+  background:var(--color-gold);
+}
+.footer-list li{margin-bottom:12px}
+.footer-list a{
+  font-size:14px;
+  color:rgba(255,255,255,.65);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:var(--transition);
+}
+.footer-list a::before{
+  content:"›";
+  color:var(--color-gold);
+  font-weight:700;
+  transition:var(--transition);
+}
+.footer-list a:hover{color:var(--color-gold);transform:translateX(4px)}
+.footer-list a:hover::before{transform:translateX(4px)}
+.footer-contact li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:18px;
+  font-size:14px;
+  color:rgba(255,255,255,.7);
+  line-height:1.6;
+}
+.footer-contact .icn{
+  width:32px;height:32px;
+  background:rgba(201,164,90,.15);
+  color:var(--color-gold);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.footer-contact .icn svg{width:14px;height:14px}
+.social-row{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+.social-row a{
+  width:40px;height:40px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.7);
+  transition:var(--transition);
+}
+.social-row a:hover{
+  background:var(--color-gold);
+  color:#fff;
+  border-color:var(--color-gold);
+  transform:translateY(-3px);
+}
+.social-row svg{width:16px;height:16px}
+.newsletter{
+  display:flex;
+  margin-top:8px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+}
+.newsletter input{
+  flex:1;
+  background:transparent;
+  border:none;
+  padding:12px 16px;
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:14px;
+  outline:none;
+}
+.newsletter input::placeholder{color:rgba(255,255,255,.45)}
+.newsletter button{
+  background:var(--color-gold);
+  color:#fff;
+  padding:0 18px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.newsletter button:hover{background:var(--color-gold-dark)}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:28px 0;
+  font-size:13px;
+  color:rgba(255,255,255,.5);
+}
+.footer-bottom .legal{display:flex;gap:24px}
+.footer-bottom .legal a:hover{color:var(--color-gold)}
+
+/* =========================================================
+   ANİMASYONLAR
+   ========================================================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(1.4)}
+}
+@keyframes bounce{
+  0%,100%{transform:translate(-50%,0)}
+  50%{transform:translate(-50%,-12px)}
+}
+@keyframes scrollDot{
+  0%{opacity:1;transform:translate(-50%,0)}
+  100%{opacity:0;transform:translate(-50%,16px)}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal[data-delay="100"]{transition-delay:.1s}
+.reveal[data-delay="200"]{transition-delay:.2s}
+.reveal[data-delay="300"]{transition-delay:.3s}
+.reveal[data-delay="400"]{transition-delay:.4s}
+.reveal[data-delay="500"]{transition-delay:.5s}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1100px){
+  .listings-grid,
+  .blog-grid,
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .cities-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .why-grid{gap:48px}
+  .hero h1{font-size:64px}
+  .search-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .btn-search{grid-column:1 / -1;padding:18px}
+}
+@media (max-width:768px){
+  .section{padding:80px 0}
+  .section-title h2{font-size:36px}
+  .nav-links{
+    position:fixed;
+    top:0;right:-100%;
+    width:80%;max-width:340px;
+    height:100vh;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:100px 32px 32px;
+    gap:0;
+    box-shadow:-20px 0 60px rgba(0,0,0,.15);
+    transition:right .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-links.open{right:0}
+  .nav-links a{
+    color:var(--color-text);
+    width:100%;
+    padding:18px 0;
+    border-bottom:1px solid var(--color-border);
+  }
+  .nav-cta{margin-top:18px;width:100%;justify-content:center}
+  .menu-toggle{display:flex}
+  .hero{padding:120px 0 80px;background-attachment:scroll}
+  .hero h1{font-size:42px}
+  .hero p.lead{font-size:17px;margin-bottom:36px}
+  .search-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:32px 0}
+  .trust-item{border-right:none;padding:20px 12px}
+  .trust-item:nth-child(2n){border-right:none}
+  .trust-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:32px}
+  .listings-grid,
+  .blog-grid,
+  .testi-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .cities-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .city-card{height:200px}
+  .why-grid{grid-template-columns:1fr;gap:48px}
+  .why-text h2{font-size:34px}
+  .why-image img{height:380px}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .contact-form{padding:32px 24px}
+  .form-grid{grid-template-columns:1fr}
+  .info-cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .footer-bottom .legal{flex-wrap:wrap;justify-content:center}
+}
+@media (max-width:480px){
+  .container{padding:0 18px}
+  .hero h1{font-size:34px}
+  .section-title h2{font-size:28px}
+  .why-text h2{font-size:28px}
+  .cities-grid{grid-template-columns:1fr}
+  .listing-price{font-size:24px}
+  .trust-num{font-size:36px}
+}
 </style>
 </head>
 <body>
-<nav>
-  <div class="logo">PROVA EMLAK</div>
-  <div class="nav-links">
-    <a href="#">Ana Sayfa</a><a href="#">Satılık</a><a href="#">Kiralık</a><a href="#">Projeler</a><a href="#">İletişim</a>
+
+<!-- ============================================
+     NAVİGASYON
+     ============================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-wrap">
+    <a href="#" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">PROVA EMLAK<small>Gayrimenkul & Danışmanlık</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hakkimizda" class="active">Hakkımızda</a></li>
+      <li><a href="#ilanlar">İlanlar</a></li>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#sehirler">Şehirler</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#iletisim" class="nav-cta">İletişim</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </div>
   </div>
-  <a href="#" class="btn-green">İlan Ver</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Türkiye Genelinde 10.000+ İlan</div>
-    <h1>Hayalinizdeki <span>Evi</span> Birlikte Bulalım</h1>
-    <p>Prova Emlak ile satılık ve kiralık gayrimenkul ilanlarında güvenilir, hızlı ve kolay alışveriş deneyimi yaşayın.</p>
-    <div class="search-bar">
-      <select><option>İstanbul</option><option>Ankara</option><option>İzmir</option></select>
-      <select><option>Tüm Tipler</option><option>Daire</option><option>Villa</option><option>Arsa</option></select>
-      <button class="btn-green">Ara</button>
+<!-- ============================================
+     HERO
+     ============================================ -->
+<header class="hero" id="hakkimizda">
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Türkiye'nin Güvenilir Emlak Markası
+    </div>
+    <h1>Hayalinizdeki eve<br><span class="accent">bir adım.</span></h1>
+    <p class="lead">Lüks konut, butik rezidans ve prestijli işyerlerinde Türkiye'nin en seçkin portföyü. On beş yıllık tecrübemizle yanınızdayız.</p>
+
+    <div class="search-card">
+      <div class="search-tabs">
+        <div class="search-tab active" data-tab="satilik">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><path d="M9 21V12h6v9"/></svg>
+          Satılık
+        </div>
+        <div class="search-tab" data-tab="kiralik">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15L19 4M15 5h4v4"/></svg>
+          Kiralık
+        </div>
+        <div class="search-tab" data-tab="tarih">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Tarihe Göre
+        </div>
+      </div>
+      <div class="search-grid">
+        <div class="search-field">
+          <label>Şehir</label>
+          <select>
+            <option>Tüm Şehirler</option>
+            <option>İstanbul</option>
+            <option>Ankara</option>
+            <option>İzmir</option>
+            <option>Antalya</option>
+            <option>Bodrum</option>
+            <option>Bursa</option>
+            <option>Trabzon</option>
+            <option>Kapadokya</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Oda Sayısı</label>
+          <select>
+            <option>Fark etmez</option>
+            <option>1+1</option>
+            <option>2+1</option>
+            <option>3+1</option>
+            <option>4+1</option>
+            <option>5+ ve üzeri</option>
+            <option>Villa</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Min Fiyat</label>
+          <input type="text" placeholder="1.000.000 TL" />
+        </div>
+        <div class="search-field">
+          <label>Max Fiyat</label>
+          <input type="text" placeholder="50.000.000 TL" />
+        </div>
+        <button class="btn-search" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          Ara
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span class="mouse"></span>
+    Keşfetmeye Devam
+  </div>
+</header>
+
+<!-- ============================================
+     GÜVEN BANTI
+     ============================================ -->
+<section class="trust-band">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+        </div>
+        <div class="trust-num">15<span class="plus">+</span></div>
+        <div class="trust-label">Yıllık Tecrübe</div>
+      </div>
+      <div class="trust-item reveal" data-delay="100">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="trust-num">2.500<span class="plus">+</span></div>
+        <div class="trust-label">Mutlu Müşteri</div>
+      </div>
+      <div class="trust-item reveal" data-delay="200">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><path d="M9 21V12h6v9"/></svg>
+        </div>
+        <div class="trust-num">850<span class="plus">+</span></div>
+        <div class="trust-label">Başarılı Satış</div>
+      </div>
+      <div class="trust-item reveal" data-delay="300">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>
+        </div>
+        <div class="trust-num">12</div>
+        <div class="trust-label">Sektör Ödülü</div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="stats">
-  <div><div class="stat-num">10.000+</div><div class="stat-label">Aktif İlan</div></div>
-  <div><div class="stat-num">5.000+</div><div class="stat-label">Mutlu Müşteri</div></div>
-  <div><div class="stat-num">15</div><div class="stat-label">Yıllık Deneyim</div></div>
-  <div><div class="stat-num">81</div><div class="stat-label">İl Kapsamı</div></div>
-</div>
+<!-- ============================================
+     ÖNE ÇIKAN İLANLAR
+     ============================================ -->
+<section class="section featured" id="ilanlar">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Seçkin Portföy</div>
+      <h2>Öne Çıkan İlanlar</h2>
+      <p>Türkiye'nin en prestijli lokasyonlarında, özenle seçilmiş lüks konut ve işyeri seçenekleri.</p>
+    </div>
 
-<section class="section">
-  <div class="section-tag">Öne Çıkan İlanlar</div>
-  <div class="section-title">Güncel Gayrimenkuller</div>
-  <div class="listings-grid">
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80" alt="Ev"><span class="listing-tag">SATILIK</span></div><div class="listing-body"><div class="listing-price">8.500.000 TL</div><div class="listing-title">Modern Villa — Beykoz</div><div class="listing-loc">İstanbul, Beykoz</div><div class="listing-details"><span>5 Oda</span><span>3 Banyo</span><span>320 m²</span></div></div></div>
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80" alt="Daire"><span class="listing-tag">KİRALIK</span></div><div class="listing-body"><div class="listing-price">25.000 TL/ay</div><div class="listing-title">Lüks Daire — Nişantaşı</div><div class="listing-loc">İstanbul, Şişli</div><div class="listing-details"><span>3+1</span><span>2 Banyo</span><span>145 m²</span></div></div></div>
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80" alt="Müstakil"><span class="listing-tag">SATILIK</span></div><div class="listing-body"><div class="listing-price">4.200.000 TL</div><div class="listing-title">Müstakil Ev — Çekmeköy</div><div class="listing-loc">İstanbul, Çekmeköy</div><div class="listing-details"><span>4 Oda</span><span>2 Banyo</span><span>210 m²</span></div></div></div>
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80" alt="Rezidans"><span class="listing-tag">SATILIK</span></div><div class="listing-body"><div class="listing-price">12.000.000 TL</div><div class="listing-title">Rezidans — Maslak</div><div class="listing-loc">İstanbul, Sarıyer</div><div class="listing-details"><span>3+1</span><span>2 Banyo</span><span>180 m²</span></div></div></div>
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=700&q=80" alt="Yazlık"><span class="listing-tag">KİRALIK</span></div><div class="listing-body"><div class="listing-price">18.000 TL/ay</div><div class="listing-title">Deniz Manzaralı Yazlık</div><div class="listing-loc">İzmir, Çeşme</div><div class="listing-details"><span>4 Oda</span><span>2 Banyo</span><span>190 m²</span></div></div></div>
-    <div class="listing-card"><div class="listing-img" style="position:relative;"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Bahçeli"><span class="listing-tag">SATILIK</span></div><div class="listing-body"><div class="listing-price">3.800.000 TL</div><div class="listing-title">Bahçeli Daire — Ümraniye</div><div class="listing-loc">İstanbul, Ümraniye</div><div class="listing-details"><span>3+1</span><span>1 Banyo</span><span>130 m²</span></div></div></div>
-  </div>
-</section>
+    <div class="listings-grid">
+      <!-- İlan 1 -->
+      <article class="listing-card reveal">
+        <div class="listing-media">
+          <span class="listing-badge sale">Satılık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=80" alt="Beykoz'da Boğaz Manzaralı Villa" loading="lazy"/>
+          <span class="listing-tag">Manzara</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">28.500.000 <small>TL</small></div>
+          <h3 class="listing-title">Beykoz Boğaz Manzaralı Lüks Villa</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Beykoz, İstanbul
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>420</strong><span>m²</span></div>
+            <div class="spec"><strong>5+2</strong><span>Oda</span></div>
+            <div class="spec"><strong>3</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">MA</div></div>
+          </div>
+        </div>
+      </article>
 
-<section class="section" style="background:rgba(21,32,21,0.5);">
-  <div class="about-grid">
-    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Ofis" class="about-img">
-    <div>
-      <div class="section-tag">Neden Prova?</div>
-      <div class="section-title">Güvenilir Emlak Ortağınız</div>
-      <p style="color:var(--muted);line-height:1.8;">15 yıldır Türkiye'nin dört bir yanında binlerce aileye ev bulduk. Şeffaf fiyatlandırma ve profesyonel danışmanlık anlayışımızla her adımda yanınızdayız.</p>
-      <ul class="feature-list">
-        <li>Sertifikalı emlak danışmanları</li>
-        <li>Ücretsiz gayrimenkul değerleme</li>
-        <li>Tapu ve hukuki süreç desteği</li>
-        <li>Banka kredi danışmanlığı</li>
-        <li>7/24 müşteri desteği</li>
-      </ul>
-      <a href="#" class="btn-green" style="margin-top:2rem;display:inline-block;">Danışman Talep Et</a>
+      <!-- İlan 2 -->
+      <article class="listing-card reveal" data-delay="100">
+        <div class="listing-media">
+          <span class="listing-badge rent">Kiralık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=80" alt="Levent'te Rezidans Daire" loading="lazy"/>
+          <span class="listing-tag">Şehir</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">85.000 <small>TL / ay</small></div>
+          <h3 class="listing-title">Levent'te Manzaralı Rezidans</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Levent, İstanbul
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>180</strong><span>m²</span></div>
+            <div class="spec"><strong>3+1</strong><span>Oda</span></div>
+            <div class="spec"><strong>2</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">SY</div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- İlan 3 -->
+      <article class="listing-card reveal" data-delay="200">
+        <div class="listing-media">
+          <span class="listing-badge sale">Satılık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80" alt="Bodrum'da Deniz Manzaralı Villa" loading="lazy"/>
+          <span class="listing-tag">Deniz</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">42.000.000 <small>TL</small></div>
+          <h3 class="listing-title">Bodrum Yalıkavak Deniz Manzaralı</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Yalıkavak, Bodrum
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>550</strong><span>m²</span></div>
+            <div class="spec"><strong>6+1</strong><span>Oda</span></div>
+            <div class="spec"><strong>4</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">EK</div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- İlan 4 -->
+      <article class="listing-card reveal">
+        <div class="listing-media">
+          <span class="listing-badge sale">Satılık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80" alt="Çankaya'da Modern Villa" loading="lazy"/>
+          <span class="listing-tag">Bahçeli</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">18.750.000 <small>TL</small></div>
+          <h3 class="listing-title">Çankaya Oran Sitesinde Bahçeli Villa</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Çankaya, Ankara
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>320</strong><span>m²</span></div>
+            <div class="spec"><strong>4+1</strong><span>Oda</span></div>
+            <div class="spec"><strong>3</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">SD</div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- İlan 5 -->
+      <article class="listing-card reveal" data-delay="100">
+        <div class="listing-media">
+          <span class="listing-badge rent">Kiralık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80" alt="Urla'da Taş Villa" loading="lazy"/>
+          <span class="listing-tag">Ege</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">120.000 <small>TL / ay</small></div>
+          <h3 class="listing-title">Urla Deniz Kenarı Taş Villa</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Urla, İzmir
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>380</strong><span>m²</span></div>
+            <div class="spec"><strong>4+2</strong><span>Oda</span></div>
+            <div class="spec"><strong>3</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">ZK</div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- İlan 6 -->
+      <article class="listing-card reveal" data-delay="200">
+        <div class="listing-media">
+          <span class="listing-badge sale">Satılık</span>
+          <a class="listing-fav" aria-label="Favorilere ekle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </a>
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Antalya Konyaaltı'nda Modern Daire" loading="lazy"/>
+          <span class="listing-tag">Akdeniz</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">12.900.000 <small>TL</small></div>
+          <h3 class="listing-title">Konyaaltı Sahile Sıfır Lüks Daire</h3>
+          <div class="listing-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Konyaaltı, Antalya
+          </div>
+          <div class="listing-specs">
+            <div class="spec"><strong>220</strong><span>m²</span></div>
+            <div class="spec"><strong>3+1</strong><span>Oda</span></div>
+            <div class="spec"><strong>2</strong><span>Banyo</span></div>
+          </div>
+          <div class="listing-cta">
+            <a class="link" href="#">Detayları Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <div class="agent" title="Danışman"><div class="agent-avatar">ÇA</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="view-all reveal">
+      <a href="#" class="btn btn-primary">Tüm İlanları Gör <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">PROVA EMLAK</div>
-  <p>Gayrimenkulde güvenilir adres.</p>
-  <p style="margin-top:0.8rem;">info@provaemlak.com.tr | +90 212 444 0 EV</p>
-  <p style="margin-top:1rem;font-size:0.8rem;">© 2025 Prova Emlak. Tüm hakları saklıdır.</p>
+<!-- ============================================
+     HİZMETLER
+     ============================================ -->
+<section class="section services" id="hizmetler">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Hizmetlerimiz</div>
+      <h2>Size Özel Çözümler</h2>
+      <p>Alım, satım, kiralama ve yatırım danışmanlığında profesyonel ekibimizle yanınızdayız.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><path d="M9 21V12h6v9"/></svg>
+        </div>
+        <h3>Gayrimenkul Alımı</h3>
+        <p>Bütçenize, yaşam tarzınıza ve beklentilerinize en uygun mülkü bulmak için uzman danışmanlarımız eşliğinde süreci yönetiyoruz.</p>
+        <a class="more" href="#">İncele <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card reveal" data-delay="100">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15L19 4M15 5h4v4M18 5l-3 3"/></svg>
+        </div>
+        <h3>Gayrimenkul Satışı</h3>
+        <p>Mülkünüzü en doğru fiyatla, doğru alıcıyla buluşturuyoruz. Profesyonel fotoğraflama, pazarlama ve hukuki süreç desteği sunuyoruz.</p>
+        <a class="more" href="#">İncele <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card reveal" data-delay="200">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/><path d="M16 21l2-2-2-2M21 19h-7"/></svg>
+        </div>
+        <h3>Kiralama Yönetimi</h3>
+        <p>Hem mülk sahipleri hem de kiracılar için şeffaf, hızlı ve güvenli kiralama çözümleri. Sözleşmeden teslime her adımda yanınızdayız.</p>
+        <a class="more" href="#">İncele <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card reveal" data-delay="300">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Yatırım Danışmanlığı</h3>
+        <p>Gayrimenkul yatırımlarınızda pazar analizi, getiri projeksiyonu ve portföy çeşitlendirme stratejileri ile uzun vadeli değer yaratıyoruz.</p>
+        <a class="more" href="#">İncele <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     NEDEN BİZ
+     ============================================ -->
+<section class="section why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image reveal">
+        <div class="frame"></div>
+        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=900&q=80" alt="Prova Emlak ekibi"/>
+        <div class="badge">
+          <span class="num">15</span>
+          <span class="lbl">Yıllık Güven</span>
+        </div>
+      </div>
+      <div class="why-text reveal" data-delay="200">
+        <div class="eyebrow" style="color:var(--color-gold);font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px">Neden Biz</div>
+        <h2>Türkiye'nin en güvenilir lüks emlak partneri.</h2>
+        <p class="lead">On beş yılı aşkın süredir, seçkin müşterilerimize butik hizmet anlayışı, derin pazar bilgisi ve uluslararası network ile en doğru çözümleri sunuyoruz. Her işlem, bizim için bir mülkten çok güven ilişkisidir.</p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6l9-4z"/></svg>
+            </div>
+            <div>
+              <h4>Hukuki Güvence</h4>
+              <p>Her işlem tapu, ipotek, imar durumu ve şerh kontrolünden geçirilir. Uzman hukuk ekibimiz süreci takip eder.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Uzman Danışman Kadrosu</h4>
+              <p>Sertifikalı, çok dilli ve sektör tecrübesi yüksek danışmanlarımız her şehirde yanınızda.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h4>Uluslararası Network</h4>
+              <p>Yurt dışı yatırımcılar için 25'ten fazla ülkede iş ortağı ağı ile küresel kapı açıyoruz.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            </div>
+            <div>
+              <h4>Butik Hizmet Anlayışı</h4>
+              <p>Her müşterimize özel danışman atanır. Süreç boyunca tek bir temas noktası ile iletişim sağlanır.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-gold">Bizimle Çalışın <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ŞEHİRLER
+     ============================================ -->
+<section class="section cities" id="sehirler">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Lokasyonlar</div>
+      <h2>Şehirlere Göre Keşfedin</h2>
+      <p>Türkiye'nin en çok tercih edilen sekiz şehrinde seçkin portföyümüz ile hizmetinizdeyiz.</p>
+    </div>
+
+    <div class="cities-grid">
+      <a href="#" class="city-card reveal">
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80" alt="İstanbul" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>İstanbul</h3>
+          <span class="count">1.240 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="100">
+        <img src="https://images.unsplash.com/photo-1605548109569-0f50c2c5e6a3?w=600&q=80" alt="Ankara" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Ankara</h3>
+          <span class="count">680 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="200">
+        <img src="https://images.unsplash.com/photo-1591101761702-04fadb1a3a3a?w=600&q=80" alt="İzmir" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>İzmir</h3>
+          <span class="count">520 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="300">
+        <img src="https://images.unsplash.com/photo-1599283308009-aa904d8e9b0e?w=600&q=80" alt="Antalya" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Antalya</h3>
+          <span class="count">410 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal">
+        <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=600&q=80" alt="Bursa" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Bursa</h3>
+          <span class="count">290 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="100">
+        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80" alt="Bodrum" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Bodrum</h3>
+          <span class="count">340 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="200">
+        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600&q=80" alt="Trabzon" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Trabzon</h3>
+          <span class="count">180 İlan</span>
+        </div>
+      </a>
+      <a href="#" class="city-card reveal" data-delay="300">
+        <img src="https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=600&q=80" alt="Kapadokya" loading="lazy"/>
+        <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="city-info">
+          <h3>Kapadokya</h3>
+          <span class="count">95 İlan</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BLOG
+     ============================================ -->
+<section class="section blog" id="blog">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Bilgi Bankası</div>
+      <h2>Blog & İpuçları</h2>
+      <p>Gayrimenkul dünyasından güncel analizler, rehberler ve uzman görüşleri.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-media">
+          <span class="blog-category">Yatırım</span>
+          <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=900&q=80" alt="2026 yılı yatırım ipuçları" loading="lazy"/>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 12 Mart 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 6 dk okuma</span>
+          </div>
+          <h3>2026 Yılında Gayrimenkul Yatırımının Altın Kuralları</h3>
+          <p>Piyasada sürdürülebilir getiri elde etmek için bilmeniz gereken stratejiler, bölgesel analizler ve uzman görüşleri bu yazıda.</p>
+          <a class="blog-link" href="#">Devamını Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-delay="100">
+        <div class="blog-media">
+          <span class="blog-category">Rehber</span>
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80" alt="Ev alırken dikkat edilecekler" loading="lazy"/>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 28 Şubat 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 8 dk okuma</span>
+          </div>
+          <h3>İlk Kez Ev Alacaklar İçin Kapsamlı Rehber</h3>
+          <p>Tapu işlemlerinden kredi seçeneklerine, ekspertiz raporundan sigorta detaylarına kadar her şey adım adım.</p>
+          <a class="blog-link" href="#">Devamını Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-delay="200">
+        <div class="blog-media">
+          <span class="blog-category">Trend</span>
+          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=900&q=80" alt="Kiralama trendleri" loading="lazy"/>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 14 Şubat 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 5 dk okuma</span>
+          </div>
+          <h3>2026 Kiralama Piyasası: Hangi Bölgeler Yükselişte?</h3>
+          <p>Akıllı şehir projeleri, ulaşım yatırımları ve yeni yerleşim alanları ile kiralama trendlerini analiz ediyoruz.</p>
+          <a class="blog-link" href="#">Devamını Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MÜŞTERİ YORUMLARI
+     ============================================ -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Müşterilerimiz</div>
+      <h2>Onların Hikayesi</h2>
+      <p>Prova Emlak ile çalışan müşterilerimizin deneyimleri ve gerçek referanslar.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+        </div>
+        <p class="testi-text">Boğaz manzaralı ev alma sürecimiz boyunca Prova Emlak'ın profesyonelliği bizi çok etkiledi. Her detayla ilgilendiler, hukuki süreçleri titizlikle yönettiler. Kesinlikle tavsiye ederim.</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="Ayşe Kaya"/>
+          <div class="info">
+            <h4>Ayşe Kaya</h4>
+            <span>Kurucu Ortak, AK Mimarlık</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" data-delay="100">
+        <div class="testi-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+        </div>
+        <p class="testi-text">Yurt dışından yatırım amaçlı gayrimenkul alırken güvenebileceğim bir partner arıyordum. Prova Emlak, tüm süreçte şeffaf ve hızlı çözümler sundu. Üç yıl içinde ikinci işbirliğimizi yaptık.</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Mehmet Demir"/>
+          <div class="info">
+            <h4>Mehmet Demir</h4>
+            <span>Yatırımcı, Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" data-delay="200">
+        <div class="testi-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+        </div>
+        <p class="testi-text">Şirketimizin yeni merkezi için ofis arayışımızda Prova Emlak ekibi tam anlamıyla ihtiyaçlarımızı anladı. Onlar sayesinde İstanbul Finans Merkezi'nde ideal lokasyonu bulduk. Mükemmel bir ekip.</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80" alt="Selin Aydın"/>
+          <div class="info">
+            <h4>Selin Aydın</h4>
+            <span>CEO, Nova Teknoloji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     İLETİŞİM
+     ============================================ -->
+<section class="section contact" id="iletisim">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">İletişim</div>
+      <h2>Sizinle Tanışmak İsteriz</h2>
+      <p>Sorularınız, talepleriniz ve randevu istekleriniz için 7/24 yanınızdayız. En kısa sürede dönüş yapıyoruz.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Mesajınız iletildi. En kısa sürede sizinle iletişime geçeceğiz.');">
+        <h3>Bize Mesaj Gönderin</h3>
+        <p class="sub">Formu doldurun, uzman danışmanımız 24 saat içinde sizi arasın.</p>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>Ad Soyad</label>
+            <input type="text" placeholder="Adınız ve soyadınız" required/>
+          </div>
+          <div class="form-row">
+            <label>Telefon</label>
+            <input type="tel" placeholder="+90 (___) ___ __ __" required/>
+          </div>
+          <div class="form-row full">
+            <label>E-Posta</label>
+            <input type="email" placeholder="ornek@eposta.com" required/>
+          </div>
+          <div class="form-row full">
+            <label>Konu</label>
+            <select>
+              <option>Satılık Gayrimenkul</option>
+              <option>Kiralık Gayrimenkul</option>
+              <option>Yatırım Danışmanlığı</option>
+              <option>Değerleme Talebi</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="form-row full">
+            <label>Mesajınız</label>
+            <textarea placeholder="Lütfen talebinizi detaylı olarak yazın..." required></textarea>
+          </div>
+          <div class="form-row full">
+            <button class="btn-submit" type="submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Mesajı Gönder
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="contact-info reveal" data-delay="200">
+        <div class="map-placeholder">
+          <div class="map-pin">
+            <div class="dot"></div>
+            <span class="lbl">Prova Emlak Merkez Ofis</span>
+          </div>
+        </div>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h4>Adres</h4>
+            <p>Bağdat Caddesi No: 142<br>Kadıköy, İstanbul</p>
+          </div>
+          <div class="info-card">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h4>Telefon</h4>
+            <p>+90 216 555 12 34<br>+90 532 555 12 34</p>
+          </div>
+          <div class="info-card">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h4>E-Posta</h4>
+            <p>info@provaemlak.com<br>destek@provaemlak.com</p>
+          </div>
+          <div class="info-card">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h4>Çalışma Saatleri</h4>
+            <p>Hafta içi 09:00 - 19:00<br>Cumartesi 10:00 - 17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#" class="brand">
+          <span class="brand-mark">P</span>
+          <span class="brand-text">PROVA EMLAK<small>Gayrimenkul & Danışmanlık</small></span>
+        </a>
+        <p>2009 yılından bu yana Türkiye'nin en güvenilir lüks gayrimenkul markalarından biri olarak, müşterilerimize butik hizmet anlayışı ve uluslararası standartlarda danışmanlık sunuyoruz.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#1d3557"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Hızlı Erişim</h4>
+        <ul class="footer-list">
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#ilanlar">İlanlar</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#sehirler">Şehirler</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Hizmetler</h4>
+        <ul class="footer-list">
+          <li><a href="#">Gayrimenkul Alımı</a></li>
+          <li><a href="#">Gayrimenkul Satışı</a></li>
+          <li><a href="#">Kiralama Yönetimi</a></li>
+          <li><a href="#">Yatırım Danışmanlığı</a></li>
+          <li><a href="#">Değerleme</a></li>
+          <li><a href="#">Hukuki Danışmanlık</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Bültene Katılın</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.65);margin-bottom:18px">Piyasa analizleri ve yeni ilanlardan haberdar olmak için e-bültenimize abone olun.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('Aboneliğiniz başarıyla oluşturuldu.');">
+          <input type="email" placeholder="E-posta adresiniz" required/>
+          <button type="submit">Katıl</button>
+        </form>
+
+        <h4 style="margin-top:32px">İletişim</h4>
+        <ul class="footer-contact">
+          <li>
+            <span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span>Bağdat Cad. No: 142<br>Kadıköy, İstanbul</span>
+          </li>
+          <li>
+            <span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span>+90 216 555 12 34</span>
+          </li>
+          <li>
+            <span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span>info@provaemlak.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Prova Emlak. Tüm hakları saklıdır.</div>
+      <div class="legal">
+        <a href="#">Gizlilik Politikası</a>
+        <a href="#">Kullanım Şartları</a>
+        <a href="#">Çerez Politikası</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<section style="padding:5rem 5%;background:rgba(21,32,21,0.7);">
-  <div style="color:#4ade80;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:0.6rem;">Finansman</div>
-  <div style="font-size:2rem;font-weight:800;margin-bottom:2.5rem;">Mortgage Hesaplama</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;">
-    <div style="background:#152015;border-radius:1rem;padding:2rem;border:1px solid rgba(74,222,128,0.12);">
-      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;">Mülk Değeri (TL)</label><input id="mProp" type="number" value="5000000" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(74,222,128,0.2);border-radius:0.4rem;padding:0.7rem 1rem;color:#e2e8f0;font-size:0.95rem;outline:none;"></div>
-      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;">Peşinat (%)</label><select id="mDown" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(74,222,128,0.2);border-radius:0.4rem;padding:0.7rem 1rem;color:#e2e8f0;font-size:0.95rem;outline:none;"><option value="20">%20</option><option value="25">%25</option><option value="30">%30</option><option value="40">%40</option><option value="50">%50</option></select></div>
-      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;">Faiz (Yıllık %)</label><input id="mRate" type="number" value="2.8" step="0.1" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(74,222,128,0.2);border-radius:0.4rem;padding:0.7rem 1rem;color:#e2e8f0;font-size:0.95rem;outline:none;"></div>
-      <div style="margin-bottom:1.5rem;"><label style="display:block;font-size:0.72rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;">Vade (Ay)</label><select id="mTerm" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(74,222,128,0.2);border-radius:0.4rem;padding:0.7rem 1rem;color:#e2e8f0;font-size:0.95rem;outline:none;"><option value="60">60 Ay</option><option value="84">84 Ay</option><option value="120" selected>120 Ay</option><option value="180">180 Ay</option><option value="240">240 Ay</option></select></div>
-      <button onclick="calcMortgage()" style="width:100%;background:#4ade80;color:#0d1f0d;border:none;padding:0.9rem;border-radius:0.4rem;font-weight:700;font-size:1rem;cursor:pointer;">Hesapla</button>
-    </div>
-    <div style="background:#152015;border-radius:1rem;padding:2rem;border:1px solid rgba(74,222,128,0.12);text-align:center;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:0.82rem;color:#94a3b8;margin-bottom:0.8rem;">Aylık Taksit</div>
-      <div id="mResult" style="font-size:3.5rem;font-weight:900;color:#4ade80;">-- TL</div>
-      <div id="mLoan" style="font-size:0.85rem;color:#94a3b8;margin-top:0.8rem;">Toplam kredi: --</div>
-      <div id="mTotal" style="font-size:0.85rem;color:#94a3b8;margin-top:0.3rem;">Toplam geri ödeme: --</div>
-    </div>
-  </div>
-</section>
 <script>
-function calcMortgage(){
-  const p=+document.getElementById('mProp').value*(1-+document.getElementById('mDown').value/100);
-  const r=+document.getElementById('mRate').value/100/12;
-  const n=+document.getElementById('mTerm').value;
-  const m=r===0?p/n:p*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
-  document.getElementById('mResult').textContent=Math.round(m).toLocaleString('tr-TR')+' TL';
-  document.getElementById('mLoan').textContent='Toplam kredi: '+Math.round(p).toLocaleString('tr-TR')+' TL';
-  document.getElementById('mTotal').textContent='Toplam geri ödeme: '+Math.round(m*n).toLocaleString('tr-TR')+' TL';
+/* =========================================================
+   NAVBAR SCROLL & SHADOW
+   ========================================================= */
+const navbar = document.getElementById('navbar');
+const onScroll = () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  updateActiveLink();
+};
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* =========================================================
+   MOBİL MENÜ
+   ========================================================= */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+/* =========================================================
+   ACTIVE NAV LINK
+   ========================================================= */
+const sections = document.querySelectorAll('section[id], header[id]');
+function updateActiveLink(){
+  let current = 'hakkimizda';
+  const scrollY = window.scrollY + 120;
+  sections.forEach(sec => {
+    if(sec.offsetTop <= scrollY) current = sec.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + current) a.classList.add('active');
+    if(a.classList.contains('nav-cta')) a.classList.remove('active');
+  });
 }
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
-calcMortgage();
-</script></body>
+
+/* =========================================================
+   ARAMA SEKME
+   ========================================================= */
+document.querySelectorAll('.search-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
+
+/* =========================================================
+   FAVORİ TOGGLE
+   ========================================================= */
+document.querySelectorAll('.listing-fav').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const svg = btn.querySelector('svg');
+    if(svg.getAttribute('fill') === 'none'){
+      svg.setAttribute('fill', '#e74c3c');
+      svg.style.stroke = '#e74c3c';
+    } else {
+      svg.setAttribute('fill', 'none');
+      svg.style.stroke = '';
+    }
+  });
+});
+
+/* =========================================================
+   SCROLL REVEAL (IntersectionObserver)
+   ========================================================= */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+/* =========================================================
+   SMOOTH SCROLL
+   ========================================================= */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e){
+    const target = this.getAttribute('href');
+    if(target.length < 2) return;
+    const el = document.querySelector(target);
+    if(el){
+      e.preventDefault();
+      window.scrollTo({
+        top: el.offsetTop - 70,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+/* =========================================================
+   SAYI SAYACI (GÜVEN BANTINDAKI RAKAMLAR)
+   ========================================================= */
+const counters = document.querySelectorAll('.trust-num');
+const countObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !entry.target.dataset.counted){
+      entry.target.dataset.counted = '1';
+      const original = entry.target.textContent;
+      const hasPlus = original.includes('+');
+      const hasDot = original.includes('.');
+      const numStr = original.replace(/[^\d]/g, '');
+      const target = parseInt(numStr, 10);
+      const duration = 1600;
+      const start = performance.now();
+      const animate = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        let value = Math.floor(target * eased);
+        let display = value.toString();
+        if(hasDot && value >= 1000){
+          display = (value/100).toFixed(2).replace('.', '.');
+        } else if(value >= 1000 && target >= 1000){
+          display = value.toLocaleString('tr-TR');
+        }
+        if(hasPlus) display += '<span class="plus">+</span>';
+        entry.target.innerHTML = display;
+        if(progress < 1) requestAnimationFrame(animate);
+        else {
+          if(hasDot) entry.target.innerHTML = (target/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (hasPlus ? '<span class="plus">+</span>' : '');
+          else if(target >= 1000) entry.target.innerHTML = target.toLocaleString('tr-TR') + (hasPlus ? '<span class="plus">+</span>' : '');
+          else entry.target.innerHTML = target + (hasPlus ? '<span class="plus">+</span>' : '');
+        }
+      };
+      requestAnimationFrame(animate);
+      countObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => countObs.observe(c));
+
+/* =========================================================
+   PARALLAX (HAYAL EFECT)
+   ========================================================= */
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  if(window.innerWidth > 768){
+    const y = window.scrollY;
+    if(y < window.innerHeight){
+      hero.style.backgroundPositionY = (y * 0.4) + 'px';
+    }
+  }
+}, {passive:true});
+
+/* =========================================================
+   FORM TARIH / INPUT EFEKTLERİ
+   ========================================================= */
+document.querySelectorAll('.form-row input, .form-row select, .form-row textarea').forEach(el => {
+  el.addEventListener('focus', () => el.parentElement.classList.add('focused'));
+  el.addEventListener('blur', () => el.parentElement.classList.remove('focused'));
+});
+</script>
+</body>
 </html>
